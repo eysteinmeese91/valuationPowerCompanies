@@ -13,7 +13,6 @@ load_data_annual_pp <- function() {
   df <- as.data.frame(jsonlite::fromJSON("https://www.nve.no/umbraco/api/Powerplant/GetHydroPowerPlantsInOperation"))
 }
 
-
 #' Annual Power Production
 #'
 #' Function that load data of power plant and power production.
@@ -28,3 +27,4 @@ annual_pp <- function(df) {
               Name = Navn,
               Annual_pp = MidProd_81_10*100000)
 }
+
