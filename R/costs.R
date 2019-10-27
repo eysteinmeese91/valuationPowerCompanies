@@ -14,6 +14,14 @@
 #' for as many years as are included in the pricepath.
 #' @export
 costs <- function(pricepath, operating_cost = 0.3, investments = 0.2,
-                  depreciation = 0.2, annual_powerprod) {
-  costs_per_year <- pricepath
+                  depreciation = 0.2, production) {
+  tibble::tibble(name = production$Name,
+                 date = pricepath$date,
+                 operating_cost = production$Annual_pp * operating_cost,
+                 investments = production$Annual_pp * investments,
+                 depreciation = production$Annual_pp * depreciation)
 }
+
+
+#aga_costs <- costs(pricepath = pricepath, production = aga)
+

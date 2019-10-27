@@ -5,7 +5,7 @@
 \title{Calculate costs}
 \usage{
 costs(pricepath, operating_cost = 0.3, investments = 0.2,
-  depreciation = 0.2, annual_powerprod)
+  depreciation = 0.2, production)
 }
 \arguments{
 \item{annual_powerprod}{}

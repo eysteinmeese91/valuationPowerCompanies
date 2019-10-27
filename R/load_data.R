@@ -23,7 +23,7 @@ load_data_annual_pp <- function() {
 annual_pp <- function(df) {
   df <- df %>%
     dplyr::select(., c(Navn, MidProd_81_10)) %>%
-    transmute(.,
+    dplyr::transmute(.,
               Name = Navn,
               Annual_pp = MidProd_81_10*100000)
 }

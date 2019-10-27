@@ -2,18 +2,27 @@
 % Please edit documentation in R/revenue.R
 \name{exp_revenue_per_year}
 \alias{exp_revenue_per_year}
-\title{Calculate revenue}
+\title{Calculate revenue for all companies}
 \usage{
 exp_revenue_per_year(production, pricepath)
 }
 \arguments{
-\item{pricepath}{}
+\item{production}{df of companies and annual production}
+
+\item{pricepath}{df of dates and pricepath of power forward in time}
+
+\item{production}{df of companies and annual production}
+
+\item{pricepath}{df of dates and pricepath of power forward in time}
 }
 \value{
+revenue per year for the years available in the price path
+
 revenue per year for the years available in the price path
 }
 \description{
 Function that takes the price path as well as annual production for a power
 plant as input, and returns revenue per year for the years available in the
-price path.
+price path. The function iterates over the entire list of companies
+that are in the input-vector.
 }
