@@ -7,7 +7,7 @@
 annual_pp(df)
 }
 \value{
-a data frame with name of power plant and annual power production
+a data frame with name of power plants and annual power production
 of the power plant.
 }
 \description{

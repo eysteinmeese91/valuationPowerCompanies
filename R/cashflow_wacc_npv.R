@@ -17,6 +17,7 @@
 cashflow <- function(df_revenue, df_costs, tax = 0.22) {
   tibble::tibble(name = df_revenue$name,
                  year = format(as.Date(df_revenue$date, format="%Y/%m/%d"),"%Y"),
+                 number = 1:nrow(df_revenue),
                  cashflow = df_revenue$revenue - df_costs$operating_cost -
                    (df_revenue$revenue - df_costs$operating_cost) * tax -
                    df_costs$investments + df_costs$depreciation)
@@ -44,7 +45,7 @@ cashflow <- function(df_revenue, df_costs, tax = 0.22) {
 #' @return Returns the real total weighted average cost of capital (WACC) in
 #' percent.
 #' @export
-wacc <- function(cashflows, asset_beta = 0.6, risk_free_rate = 0.02,
+wacc <- function(cashflow, asset_beta = 0.6, risk_free_rate = 0.02,
                  market_risk_prem = 0.05, other_adj = 0.02,
                  debt_prem = 0.025, debt_share = 0.5,
                  corp_income_tax = 0.22, inflation = 0.02) {
@@ -58,3 +59,24 @@ wacc <- function(cashflows, asset_beta = 0.6, risk_free_rate = 0.02,
                    (cost_of_debt*debt_share),
                  wacc = ((1 + cost_of_capital)/(1 + inflation)) - 1)
 }
+
+
+#' Net Present Value
+#'
+#' Function that calculates the Net Present Value (NPV) of a firm.
+#'
+#' @param cf df with cashflows for the firm.
+#' @param wacc a number in percent, the real total weighted average cost of
+#' capital (WACC).
+#'
+#' @return the NPV for a firm at time 0.
+#' @export
+npv <- function(cf, wacc) {
+  sum(cf$cashflow/((1+wacc$wacc)^cf$number))
+}
+
+#wacc_aga <- wacc(cashflow = cashflows)
+
+#npv_aga <- npv(cashflows, wacc_aga)
+
+

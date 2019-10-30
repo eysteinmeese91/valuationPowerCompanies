@@ -17,7 +17,7 @@ load_data_annual_pp <- function() {
 #'
 #' Function that load data of power plant and power production.
 #'
-#' @return a data frame with name of power plant and annual power production
+#' @return a data frame with name of power plants and annual power production
 #' of the power plant.
 #' @export
 annual_pp <- function(df) {
@@ -25,6 +25,14 @@ annual_pp <- function(df) {
     dplyr::select(., c(Navn, MidProd_81_10)) %>%
     dplyr::transmute(.,
               Name = Navn,
-              Annual_pp = MidProd_81_10*100000)
+              Annual_pp = MidProd_81_10*1000000)
 }
 
+
+
+# annual_pp <- function(df, navn) {
+#   df <- df[df$Navn==navn,] %>%
+#     dplyr::select(., c(Navn, MidProd_81_10))
+# }
+#
+# aa <- annual_pp(data, "Grøndal")

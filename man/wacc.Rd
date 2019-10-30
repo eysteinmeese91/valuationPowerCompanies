@@ -7,7 +7,7 @@
 Function that calculates the total weighted average cost of capital (WACC)
 for a specific power plant.}
 \usage{
-wacc(cashflows, asset_beta = 0.6, risk_free_rate = 0.02,
+wacc(cashflow, asset_beta = 0.6, risk_free_rate = 0.02,
   market_risk_prem = 0.05, other_adj = 0.02, debt_prem = 0.025,
   debt_share = 0.5, corp_income_tax = 0.22, inflation = 0.02)
 }
