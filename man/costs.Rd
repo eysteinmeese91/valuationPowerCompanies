@@ -8,7 +8,15 @@ costs(pricepath, operating_cost = 0.3, investments = 0.2,
   depreciation = 0.2, production)
 }
 \arguments{
-\item{annual_powerprod}{}
+\item{pricepath}{pricepath the next 80 years for 1 kwh power.}
+
+\item{operating_cost}{operating cost for 1 Kwh power.}
+
+\item{investments}{Investmens cost for 1 Kwh power.}
+
+\item{depreciation}{depreciation per 1 kwh power produced.}
+
+\item{annual_powerprod}{annual powerproduction for the company}
 }
 \value{
 Returns operating costs, investment costs and depreciation per year,

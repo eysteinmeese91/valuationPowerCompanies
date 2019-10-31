@@ -9,3 +9,4 @@ pricepath <- tibble::tibble(date = seq(lubridate::as_date("2019-12-31"),
 save(pricepath, file="data/pricepath.rda")
 
 
+

@@ -1,7 +1,4 @@
-# Cashflow, WACC and NPV
-
-# Beregn årlig fri kontantstrømmen (etter skatt) fra drift for et kraftverk ved følgende formel:
-# Inntekter−Kostnader−Skatt−Investeringer+Avskrivning
+##  Script for functions for Cashflow, WACC and NPV.
 
 #' Cashflow
 #'
@@ -32,15 +29,15 @@ cashflow <- function(df_revenue, df_costs, tax = 0.22) {
 #' Function that calculates the total weighted average cost of capital (WACC)
 #' for a specific power plant.
 #'
-#' @param cashflows
-#' @param asset_beta
-#' @param risk_free_rate
-#' @param market_risk_prem
-#' @param other_adj
-#' @param debt_prem
-#' @param debt_share
-#' @param corp_income_tax
-#' @param inflation
+#' @param cashflows estimated future cashflow for the company.
+#' @param asset_beta asseta beta for the company.
+#' @param risk_free_rate risk-free rate of production for the company.
+#' @param market_risk_prem Market risk premium for operating for the company.
+#' @param other_adj Other adjustment for the company.
+#' @param debt_prem Debt premium for the company.
+#' @param debt_share Debt share for the company.
+#' @param corp_income_tax Corporation income tax for the company.
+#' @param inflation Rate of inflation in the economy.
 #'
 #' @return Returns the real total weighted average cost of capital (WACC) in
 #' percent.
@@ -72,11 +69,8 @@ wacc <- function(cashflow, asset_beta = 0.6, risk_free_rate = 0.02,
 #' @return the NPV for a firm at time 0.
 #' @export
 npv <- function(cf, wacc) {
-  sum(cf$cashflow/((1+wacc$wacc)^cf$number))
+  tibble::tibble(Name = cf$name[1],
+                 NPV = sum(cf$cashflow/((1+wacc$wacc)^cf$number)))
 }
-
-#wacc_aga <- wacc(cashflow = cashflows)
-
-#npv_aga <- npv(cashflows, wacc_aga)
 
 

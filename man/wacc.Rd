@@ -12,7 +12,23 @@ wacc(cashflow, asset_beta = 0.6, risk_free_rate = 0.02,
   debt_share = 0.5, corp_income_tax = 0.22, inflation = 0.02)
 }
 \arguments{
-\item{inflation}{}
+\item{asset_beta}{asseta beta for the company.}
+
+\item{risk_free_rate}{risk-free rate of production for the company.}
+
+\item{market_risk_prem}{Market risk premium for operating for the company.}
+
+\item{other_adj}{Other adjustment for the company.}
+
+\item{debt_prem}{Debt premium for the company.}
+
+\item{debt_share}{Debt share for the company.}
+
+\item{corp_income_tax}{Corporation income tax for the company.}
+
+\item{inflation}{Rate of inflation in the economy.}
+
+\item{cashflows}{estimated future cashflow for the company.}
 }
 \value{
 Returns the real total weighted average cost of capital (WACC) in

@@ -17,11 +17,14 @@ load_data_annual_pp <- function() {
 #'
 #' Function that load data of power plant and power production.
 #'
+#' @param df a df collectet from NVE containing information about power plants.
+#' @param name insert the name of the power plant you wish to examine.
+#'
 #' @return a data frame with name of power plants and annual power production
 #' of the power plant.
 #' @export
-annual_pp <- function(df) {
-  df <- df %>%
+annual_pp <- function(df, name) {
+  df <- df[df$Navn==name,] %>%
     dplyr::select(., c(Navn, MidProd_81_10)) %>%
     dplyr::transmute(.,
               Name = Navn,
@@ -29,10 +32,3 @@ annual_pp <- function(df) {
 }
 
 
-
-# annual_pp <- function(df, navn) {
-#   df <- df[df$Navn==navn,] %>%
-#     dplyr::select(., c(Navn, MidProd_81_10))
-# }
-#
-# aa <- annual_pp(data, "Grøndal")

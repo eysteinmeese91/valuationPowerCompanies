@@ -1,9 +1,5 @@
 ## Revenue for power plants
 
-# Lag en funksjon som tar prisbanen samt årlig produksjon for et kraftverk som
-# input, og returnerer inntekt per år for de årene som er tilgjengelig i
-# prisbanen. Man kan gå ut ifra at årlig kraftproduksjon vil være stabil.
-
 #' Calculate revenue for all companies
 #'
 #' Function that takes the price path as well as annual production for a power

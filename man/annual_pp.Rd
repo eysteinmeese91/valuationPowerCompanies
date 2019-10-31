@@ -4,7 +4,12 @@
 \alias{annual_pp}
 \title{Annual Power Production}
 \usage{
-annual_pp(df)
+annual_pp(df, name)
+}
+\arguments{
+\item{df}{a df collectet from NVE containing information about power plants.}
+
+\item{name}{insert the name of the power plant you wish to examine.}
 }
 \value{
 a data frame with name of power plants and annual power production
