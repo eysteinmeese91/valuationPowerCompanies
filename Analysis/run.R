@@ -4,7 +4,9 @@
 # FIRST, load data from NVE containing information about power plants.
 data <- load_data_annual_pp()
 
-# SECOND, insert the name of the power plant you wish to examine.
+# SECOND, insert the name of the power plant you wish to examine. If you wish
+# to examine several, change name below and run the codes from row 12 again.
+# No need to load data in row 5 again.
 powerplant <- "Aall-Ulefoss"
 
 # Next, Run these codes

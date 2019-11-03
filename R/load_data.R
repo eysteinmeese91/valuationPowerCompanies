@@ -1,5 +1,8 @@
 # Load data
 
+# required packages
+library(tidyverse)
+
 #' Load data
 #'
 #' Function that loads data from power plants in Norway.
